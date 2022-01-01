@@ -5,7 +5,7 @@
  | |___|  __/  __/ (_| \__ \    \  /  | | |  | |_| |_| | (_| | | | |___| (_| | |_) |
  |______\___|\___|\__,_|___/     \/   |_|_|   \__|\__,_|\__,_|_| |______\__,_|_.__/ 
         
-		Updated by Jordan 08/07/20          
+		Updated by Jordan 01/01/21          
 -->
 <script>
  browser = {};
@@ -140,7 +140,7 @@ $i:0.25s;
     
   }
   $i: $i + 0.25s;
-} 
+}
 
 
 
@@ -298,11 +298,10 @@ body {font-family: Arial, Helvetica, sans-serif;}
                                  <a class="nav-link" href="#">Home</a>
                               </li>
                               <li class="nav-item">
-                                 <a class="nav-link" href="#why">FAQ</a>
+                                 <a class="nav-link" href="#faq">FAQ</a>
 			      					</li>
-				       
-				<li class="nav-item">
-                                 <a class="nav-link" href="https://passwordreset.microsoftonline.com/?ru=GB&hosted=0&device_platform=Windows+10&username=%40leedslab.uk">Reset Password</a>
+                               <li class="nav-item">
+                                 <a class="nav-link" href="https://passwordreset.microsoftonline.com/?ru=GB&hosted=0&device_platform=Windows+10&username=%40leedslab.uk"  target="_blank" >Password Reset</a>
                              </li>
                               <li class="nav-item">
                                  <a class="nav-link" href="#why>Common Issues</a>
@@ -332,7 +331,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                      <h1>Leeds<br> Virtual Lab</h1>
 
                      <span>Splash Page<span>
-	                          <p>Welcome to Leeds Virtual Lab! The site that allows you to simulate large networks using real virtualised images<br> - Lab is running EVE-NG (UNETLAB)<br>-Maintained by Jordan <br></p> 
+	                          <p>Welcome to Leeds Virtual Lab! The site that allows you to simulate large networks using real virtualised images<br> - Lab is running EVE-NG (UNETLAB)<br>- Maintained by Jordan <br> - Please select either Zeus or Apollo server to start!</p> 
 
 			</font></h2>
 		     <a href="https://zeus.leedslab.uk/#/login">Launch Zeus EVE</a>
@@ -359,45 +358,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
             <div class="row">
                <div class="col-md-12">
  		<div id="why" class="why">
-					 
-	  <div class="container">
-            <div class="row">
-               <div class="col-md-12">
-                  <div class="titlepage">
-                    <h2>Overview</h2>
-			<p>The Leeds Virtual Design Lab is a clientless virtualisation platform that allows you to create and simulate large networks without any external software. You just use a web browser! The software I have used to set this up is EVE-NG. Its very similar to GNS3 but you only need a web browser to access it. "The first clientless multivendor network emulation software that empowers network and security professionals. Clientless management makes EVE the best choice for Enterprise engineers without influence of corporate security policies as it can be run in a completely isolated environment." - EVE-NG Ltd<p>
-                     	<br><p>Read below for some background information and user guides for both labs.</p>
-                  </div>
-                     <figure><img  src="https://www.eve-ng.net/wp-content/uploads/2019/11/30_sec_lab_vpn-1.png" alt="#"/></figure>
-		<p>Firstly, I've setup two labs for the Leeds team: a Cisco only lab and multi vendor lab (Pro Lab). The Cisco lab is great for people studying for CCNA/CCNP and CCIE: it only has Cisco routers and switches. I have created a getting started guide as PDF, this will cover basic operation. Lab access is <u> invite only for Leeds colleagues only.</u> 
-		<br>The pro lab can only have so many active users due to licence restrictions. If you're interested in getting an account on the pro server, a licence must be purchased (50Euro) from eve-ng-net to activate an additional user. Please speak to Jordan if you're interested. The EVE pro lab has been set up to support my university project/is my university project to simulate large networks and has nearly all network vendors.
-		 <a class="read_more bg" href="lds-host.pdf">End Client Guide - VPC/Dockers/Windows</a>
-		 <a class="read_more bg" href="Proguide.pdf"">Node Passwords</a>
-		<br>
-		<table style="width:75%">
-		<table>
-  		   <tr>
-    			<th><iframe width="600" height="360" src="https://www.youtube.com/embed/OwUZcp1OJFU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></th>
-    			<th><iframe width="600" height="360" src="https://www.youtube.com/embed/qFj84MdGwpE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>	</th>	  </div>
-		</tr>
-		</table>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!-- end Hosting -->
-      <!-- Services  -->				 
-					 
-					 
-					 
-					 
      <!-- News -->
-					 
-					 
-					 
-					 
-					 
-					 
          <div class="container">
             <div class="row">
                <div class="col-md-12">
@@ -408,15 +369,39 @@ body {font-family: Arial, Helvetica, sans-serif;}
      			data-period="2000"
      			data-rotate='[ "Cisco SD-WAN", "Palo Alto", "Cisco IOS/IOS XE", "Nvidia", "F5", "Fortinet","Linux", "Cisco Nexus", "Cisco DNA-C", "Windows", "Cisco ASA"]'></span>
  	             	<br> </br>
-                    <h2>Frequently Asked Questions and Answers</h2>
+              
+      <!-- end why -->
+  <div class="container">
+            <div id="faw" class="row">
+               <div class="col-md-12">
+                  <div class="titlepage">
+                    <h2>Overview</h2>
+			<p>The Leeds Virtual Design Lab is a clientless virtualisation platform that allows you to create and simulate large networks without any external software. You just use a web browser! The software I have used to set this up is EVE-NG. Its very similar to GNS3 but you only need a web browser to access it. "The first clientless multivendor network emulation software that empowers network and security professionals. Clientless management makes EVE the best choice for Enterprise engineers without influence of corporate security policies as it can be run in a completely isolated environment." - EVE-NG Ltd<p>
+                     	<br><p>Read below for some background information and user guides for both labs.</p>
+                  </div>
+                     <figure><img  src="https://www.eve-ng.net/wp-content/uploads/2019/11/30_sec_lab_vpn-1.png" alt="#"/></figure><table>
+
+		 <a class="read_more bg" href="lds-host.pdf">End Client Guide</a>
+		 <a class="read_more bg" href="Proguide.pdf"">Node Passwords</a>
+		<br>
+		<table style="width:75%">
+		<table>
+  		   <tr>
+    			<th><iframe width="600" height="360" src="https://www.youtube.com/embed/OwUZcp1OJFU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></th>
+    			<th><iframe width="600" height="360" src="https://www.youtube.com/embed/qFj84MdGwpE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>	</th>	  </div>
+		</tr>
+		</table>
+
                   </div>
                </div>
             </div>
-            <div class="row">
+	<br>
+	<h2 id="faq" >Frequently Asked Questions and Answers</h2>
+            <div class="row">      
                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-                  <div id="box_ho" class="why-box">
+                  <div class="why-box">
                      <h3>Stuck loading</h3>
-                     <p>Use Firefox, Chrome or Edge - IE is not supported. If it's still stuck loading clear all history cache etc then retry - Finally, <a href="https://leeds.technical-bhrpnvptjv-1.dynamic-m.com/SplashPage.html">click HERE</a>.</p>
+                     <p>Use Firefox, Chrome or Edge - IE is not supported. If it's still stuck loading clear all history cache etc then retry</a>.</p>
                   </div>
                </div>
                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
@@ -446,29 +431,21 @@ body {font-family: Arial, Helvetica, sans-serif;}
                   </div>
                       </div>
      		<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-                  <a href="lds-host.pdf"><div class="why-box">
-                       <h3>Host PC Guide</h3>
-                     <p>Click on me to access the host guide</p>
-                  </div>
-		</a href="lds-host.pdf">
-               </div>
- </div>
-           	<div class="col-xl-20 col-lg-4 col-md-4 col-sm-12">
-                  <div class="why-box">
+						<div class="why-box">
                        <h3>Juniper Nodes?</h3>
-                     <p>The NEW Juniper vMX images are based on dual nodes setup, where Routing engine (VCP) is connected to Forwarding plane (VFP) and act like single node. All the cli configurations will be done on the VCP, but porting and connections will be on VFP. You can use vMX (v14) if you require the older image, this is deployed as a single node</p>
+                     <p>The NEW Juniper vMX images are based on dual nodes setup, where Routing engine (VCP) is connected to Forwarding plane (VFP) and act like single node. All the cli configurations will be done on the VCP, but porting and connections will be on VFP. You can use vMX (v14) if you require the older image, this is deployed as a single node</p></p>
                   </div>
-			 </div>
-
-
-
-
+               </div>
+			   </div>
+ </div>
+ </div>
          </div>
-      <!-- end why -->
-	<br />	
-		<br />
-
-
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- end Hosting -->
+      <!-- Services  -->
       <div id="vendor" class="Services">
          <div class="container">
             <div class="row">
@@ -497,7 +474,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                   <div class="Services-box">
                      <i><img src="https://technext.github.io/data-web/images/service3.png" alt="#" /></i>
                      <h3>SD-WAN / SDN</h3>
-                     <p>Versa Networks, Cicso Viptela, Silver Peak, VMWare, Velocloud and Cisco ACI</p>
+                     <p>Cicso Viptela, Fortinet</p>
                   </div>
                </div>
                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
@@ -518,7 +495,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                   <div class="Services-box">
                      <i><img src="https://technext.github.io/data-web/images/service6.png" alt="#" /></i>
                      <h3>End Clients</h3>
-                     <p> VPC, Kali Linux, Ubuntu (with iPerf), Bohi Linux,  Windows 7 (with wireshark and putty) , Windows 10 and Windows server and VMware (nested virtualization>
+                     <p> VPC, Kali Linux, Ubuntu (with iPerf), Bohi Linux,  Windows 7 (with wireshark and putty) , Windows 10 and Windows server </p>
                   </div>
                </div>
                <a class="read_more" href="https://www.eve-ng.net/index.php/documentation/supported-images/" target="_blank">Full list of supported nodes</a>
