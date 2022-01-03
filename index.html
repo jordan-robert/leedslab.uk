@@ -7,6 +7,64 @@
         
 		Updated by Jordan 01/01/21          
 -->
+
+
+ <!-- ZEUS SERVER ONLINE CHECK   -->
+<script>
+function ServerTest(URL) {
+    var tester=new Image();
+    tester.onload=imageFound;
+    tester.onerror=imageNotFound;
+    tester.src=URL;
+}
+
+function imageFound() {
+    document.getElementById("zeus-status").innerHTML = "Zeus Online"; 
+}
+
+function imageNotFound() {
+     document.getElementById("zeus-fail-status").innerHTML = "Zeus Offline!"; 
+}
+
+ServerTest("https://zeus.leedslab.uk/con-test.png");
+
+
+</script>
+
+ <!-- APOLLO SERVER ONLINE CHECK   -->
+<script>
+
+function imageFound() {
+    document.getElementById("apollo-status").innerHTML = "Apollo Online"; 
+}
+
+function imageNotFound() {
+     document.getElementById("apollo-fail-status").innerHTML = "Apollo Offline!"; 
+}
+
+ServerTest("https://apollo.leedslab.uk/con-test.png");
+
+
+</script>
+
+ <!-- LB SERVER ONLINE CHECK   -->
+<script>
+
+function imageFound() {
+    document.getElementById("kemp-status").innerHTML = "Kemp LB Online"; 
+}
+
+function imageNotFound() {
+     document.getElementById("kemp-fail-status").innerHTML = "KEMP Offline!"; 
+	 alert("The main load balancer (KEMP) is not reachable from your PC. Because of this, both servers will be offline. This is normally a WAN or server issue and should be sorted soon, sorry!") 
+}
+
+ServerTest("https://www.leedslab.uk/lm_auth_proxy?LMimage=con-test.png");
+
+
+</script>
+
+ <!-- Validate Browser  -->
 <script>
  browser = {};
 if (/(Edge\/[0-9]{2})/i.test(navigator.userAgent)) {
@@ -79,6 +137,12 @@ if (browser.agent === "MSIE" && browser.version <= 12) {
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <style type="text/css">
+s1 {
+  color: green;
+}
+s2 {
+  color: red;
+}
 .btn
 {
   font-family:sans-serif;
@@ -302,15 +366,19 @@ body {font-family: Arial, Helvetica, sans-serif;}
 			      					</li>
                                <li class="nav-item">
                                  <a class="nav-link" href="https://passwordreset.microsoftonline.com/?ru=GB&hosted=0&device_platform=Windows+10&username=%40leedslab.uk"  target="_blank" >Password Reset</a>
-                             </li>
+                             </li>	 
                               <li class="nav-item">
                                  <a class="nav-link" href="#why>Common Issues</a>
+                       
+			      					</li>
+                              <li class="nav-item">
+                                 <a class="nav-link" href="https://zeus.leedslab.uk/#/login">Login - Zeus</a>
                               </li>
                               <li class="nav-item">
-                                 <a class="nav-link" href="https://zeus.leedslab.uk/#/login">Login - Zeus Server</a>
+                                 <a class="nav-link" href="https://apollo.leedslab.uk/#/login">Login - Apollo</a>
                               </li>
-                              <li class="nav-item">
-                                 <a class="nav-link" href="https://apollo.leedslab.uk/#/login"> Login - Apollo Server </a>
+                                 <b> <s1 id="kemp-status"> </b></s1> 
+								 <h1> <b> <s2 id="kemp-fail-status"></s2> </b> </h1>
                               </li>
                            </ul>
                         </div>
@@ -336,6 +404,16 @@ body {font-family: Arial, Helvetica, sans-serif;}
 			</font></h2>
 		     <a href="https://zeus.leedslab.uk/#/login">Launch Zeus EVE</a>
 		     <a href="https://apollo.leedslab.uk/#/login">Launch Apollo EVE</a>
+			<table>
+			<table style="width:95%">
+			<tr>
+    			<th> <s1 id="zeus-status"> </s1> </th>
+				<th> <s2 id="zeus-fail-status"> </s1> </th>
+    			<th> <s1 id="apollo-status"> </s1></th>
+				<th> <s2 id="apollo-fail-status"> </s1></th>
+		</tr>
+		
+		</table>
                   </div>
                </div>
                <div class="col-md-7">
