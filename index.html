@@ -12,11 +12,17 @@
 
  <!-- ZEUS SERVER ONLINE CHECK   -->
 <script>
-function ServerTest(URL) {
+
+var zeus = "https://zeus.leedslab.uk/themes/adminLTE/connectivity/";
+var ram = Math.floor(Math.random()* 2000);
+var svg = ".svg";
+var url = zeus + ram + svg;
+
+function ServerTest(url) {
     var tester=new Image();
     tester.onload=imageFound;
     tester.onerror=imageNotFound;
-    tester.src=URL;
+    tester.src=url;
 }
 
 function imageFound() {
@@ -27,7 +33,7 @@ function imageNotFound() {
      document.getElementById("zeus-fail-status").innerHTML = "Zeus Offline!"; 
 }
 
-ServerTest("https://zeus.leedslab.uk/con-test.svg");
+ServerTest(url);
 
 
 </script>
@@ -35,19 +41,26 @@ ServerTest("https://zeus.leedslab.uk/con-test.svg");
  <!-- APOLLO SERVER ONLINE CHECK   -->
 <script>
 
+ <!-- APOLLO SERVER ONLINE CHECK   -->
 function imageFound() {
     document.getElementById("apollo-status").innerHTML = "Apollo Online"; 
 }
 
 function imageNotFound() {
-     document.getElementById("apollo-fail-status").innerHTML = "Apollo Offline!"; 
+     document.getElementById("apollo-fail-status").innerHTML = "KEMP Offline!"; 
+	 
 }
 
-ServerTest("https://apollo.leedslab.uk/con-test1.svg");
+var apollo = "https://apollo.leedslab.uk/themes/adminLTE/connectivity/";
+var ram = Math.floor(Math.random()* 2000);
+var svg = ".svg";
+var url = apollo + ram + svg;
+
+ServerTest(url);
+
 
 
 </script>
-
  <!-- LB SERVER ONLINE CHECK   -->
 <script>
 
