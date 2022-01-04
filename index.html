@@ -1,4 +1,3 @@
-
  <!--      
  | |                 | |     \ \    / (_)    | |             | | | |         | |    
  | |     ___  ___  __| |___   \ \  / / _ _ __| |_ _   _  __ _| | | |     __ _| |__  
@@ -9,350 +8,34 @@
 		Updated by Jordan 01/01/21          
 -->
 
-
- <!-- ZEUS SERVER ONLINE CHECK   -->
-<script>
-
-var zeus = "https://zeus.leedslab.uk/themes/adminLTE/connectivity/";
-var ram = Math.floor(Math.random()* 2000);
-var svg = ".svg";
-var url = zeus + ram + svg;
-
-function ServerTest(url) {
-    var tester=new Image();
-    tester.onload=imageFound;
-    tester.onerror=imageNotFound;
-    tester.src=url;
-}
-
-function imageFound() {
-    document.getElementById("zeus-status").innerHTML = "Zeus Online"; 
-}
-
-function imageNotFound() {
-     document.getElementById("zeus-fail-status").innerHTML = "Zeus Offline!"; 
-}
-
-ServerTest(url);
-
-
-</script>
-
- <!-- APOLLO SERVER ONLINE CHECK   -->
-<script>
-
- <!-- APOLLO SERVER ONLINE CHECK   -->
-function imageFound() {
-    document.getElementById("apollo-status").innerHTML = "Apollo Online"; 
-}
-
-function imageNotFound() {
-     document.getElementById("apollo-fail-status").innerHTML = "Apollo Offline"; 
-	 
-}
-
-var apollo = "https://apollo.leedslab.uk/themes/adminLTE/connectivity/";
-var ram = Math.floor(Math.random()* 2000);
-var svg = ".svg";
-var url = apollo + ram + svg;
-
-ServerTest(url);
-
-
-
-</script>
- <!-- LB SERVER ONLINE CHECK   -->
-<script>
-
-function imageFound() {
-    document.getElementById("kemp-status").innerHTML = "Kemp LB Online"; 
-}
-
-function imageNotFound() {
-     document.getElementById("kemp-fail-status").innerHTML = "KEMP Offline!"; 
-	 alert("The main load balancer (KEMP) is not reachable from your PC. Because of this, both servers will be offline. This is normally a WAN or server issue and should be sorted soon, sorry!") 
-}
-
-ServerTest("https://kemp.leedslab.uk/lm_auth_proxy?LMimage=con-test.png");
-
-
-</script>
-
- <!-- Validate Browser  -->
-<script>
- browser = {};
-if (/(Edge\/[0-9]{2})/i.test(navigator.userAgent)) {
-    browser.agent = navigator.userAgent.match(/(Edge\/[0-9]{2})/i)[0].split("/")[0];
-    browser.version = parseInt(navigator.userAgent.match(/(Edge\/[0-9]{2})/i)[0].split("/")[1]);
-} else if (/(chrome\/[0-9]{2})/i.test(navigator.userAgent)) {
-    browser.agent = navigator.userAgent.match(/(chrome\/[0-9]{2})/i)[0].split("/")[0];
-    browser.version = parseInt(navigator.userAgent.match(/(chrome\/[0-9]{2})/i)[0].split("/")[1]);
-} else if (/(firefox\/[0-9]{2})/i.test(navigator.userAgent)) {
-    browser.agent = navigator.userAgent.match(/(firefox\/[0-9]{2})/i)[0].split("/")[0];
-    browser.version = parseInt(navigator.userAgent.match(/(firefox\/[0-9]{2})/i)[0].split("/")[1]);
-} else if (/(MSIE\ [0-9]{1})/i.test(navigator.userAgent)) {
-    browser.agent = navigator.userAgent.match(/(MSIE\ [0-9]{1})/i)[0].split(" ")[0];
-    alert("The Leeds Lab has only been tested on on Chrone, Firefox and Edge");
-    browser.version = parseInt(navigator.userAgent.match(/(MSIE\ [0-9]+)/i)[0].split(" ")[1]);
-} else if (/(Opera\/[0-9]{1})/i.test(navigator.userAgent)) {
-    browser.agent = navigator.userAgent.match(/(Opera\/[0-9]{1})/i)[0].split("/")[0];
-    browser.version = parseInt(navigator.userAgent.match(/(Opera\/[0-9]{1})/i)[0].split("/")[1]);
-    alert("The Leeds Lab has only been tested on on Chrone, Firefox and Edge");
-} else if (/(Trident\/[7]{1})/i.test(navigator.userAgent)) {
-    browser.agent = "MSIE";
-    browser.version = 11;
-    alert("Failed Browser Detection: The Leeds Lab does not support Internet Explorer, please use Chrome, Firefox or Edge. Please speak to Jordan if you're having difficulty accessing the lab");
-} else {
-    browser.agent = false;
-    browser.version = false;
-}
-
-if (/(Windows\ NT\ [0-9]{1}\.[0-9]{1})/.test(navigator.userAgent)) {
-    browser.os = "Windows";
-
-    switch (parseFloat(navigator.userAgent.match(/(Windows\ NT\ [0-9]{1}\.[0-9]{1})/)[0].split(" ")[2])) {
-        case 6.0:
-            browser.osversion = "Vista";
-            break;
-        case 6.1:
-            browser.osversion = "7";
-            break;
-        case 6.2:
-            browser.osversion = "8";
-            break;
-        default:
-            browser.osversion = false;
-    }
-} else if (/(OS\ X\ [0-9]{2}\.[0-9]{1})/.test(navigator.userAgent)) {
-    browser.os = "OS X";
-    browser.osversion = navigator.userAgent.match(/(OS\ X\ [0-9]{2}\.[0-9]{1})/)[0].split(" ")[2];
-    alert("The Leeds Lab has only been tested on Windows, but should still work on OS-X");
-} else if (/(Linux)/.test(navigator.userAgent)) {
-    browser.os = "Linux";
-    browser.osversion = false;
-    alert("OS Detection: The Leeds Lab has only been tested on Windows, but should still work on Unix based systems");
-
-
-}
-
-if (browser.agent === "MSIE" && browser.version <= 12) {
-    var newDiv = document.createElement("div");
-    newDiv.innerHTML = "IE9 is not supported on the Leeds Lab ! You are using an UNSUPPORTED version of Internet Explorer. Use Chrome, Edge or Firefox. Please speak to Jordan if you're having issues accesing the Lab";
-    newDiv.setAttribute("style", "background-color:yellow;padding:18px;");
-    document.body.insertBefore(newDiv, document.body.firstChild);
-} else { //TODO: Remove for Prod only added to show some flexibility and testing 
-    var newDiv = document.createElement("div");
-    newDiv.innerHTML = "<b>" + browser.agent + "</b> is <i>so</i> supported. Passed Leeds Lab Verification: are using version: " + browser.version+ ".";
-    newDiv.setAttribute("style", "background-color:cyan;padding:12px;");
-    document.body.insertBefore(newDiv, document.body.firstChild);
-}
-</script>
-<!-- Cursor and scroll bar-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<style type="text/css">
-s1 {
-  color: green;
-}
-s2 {
-  color: red;
-}
-.btn
-{
-  font-family:sans-serif;
-  color:white;
-  text-decoration:none;
-  text-transform:uppercase;
-  letter-spacing:2.8px;
-  background-color: #1b8bf9;
-  padding:15px 50px;
-  border-radius:5rem;
-  box-shadow: 1px 2.9px 16px                 rgba(27,139,249,0.4);
-  transition:0.6s cubic-bezier(0.01, 1.69,    0.99, 0.94); 
-
-  &:hover
-  {box-shadow: 3px 4.9px 16px rgba(27,139,249,0.6);
-   letter-spacing:5px;
-}
-  &--clicked
-  {
-    transition:0.6s cubic-bezier(0.01, 1.69, 0.99, 0.94); 
-    padding:15px 2px;
-    width:50px;
-    color:transparent;
-z-index:-10;
-  }
-}
-
-.color{
-  display:block;
-   width:0;
-  height:0;
-  left:50%;
-  top:50%;
-  transform:translate(-50%,-50%);
-  position:absolute;
-  transition:0.8s ease;
-   border-radius:50%;
-  background-color:transparent;
-}
-.expanded
-{
-   width:200%;
-  padding-bottom:200%;
-  height:auto; 
-
-}
-$colors: (
-  blue: #1b8bf9,
-  orange: #FF6C19,
-  green: #41FF9F,
-  white: #f9f9f9
-);
-$i:0.25s;
-@each $colorName, $color in $colors {
-  
-  .color--#{$colorName} {
-    background-color: $color;
-    transition-delay:($i);
-    
-  }
-  $i: $i + 0.25s;
-}
-
-
-
-
-<style> 
-
-.mySlides {display:none;}
-
-header video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  z-index: 0;
-  -ms-transform: translateX(-50%) translateY(-50%);
-  -moz-transform: translateX(-50%) translateY(-50%);
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
-}
-
-body {font-family: Arial, Helvetica, sans-serif;}
-
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-
-/* Modal Content */
-.modal-content {
-  position: relative;
-  background-color: #fefefe;
-  margin: auto;
-  padding: 0;
-  border: 1px solid #888;
-  width: 80%;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-  -webkit-animation-name: animatetop;
-  -webkit-animation-duration: 0.4s;
-  animation-name: animatetop;
-  animation-duration: 0.4s
-}
-
-/* Add Animation */
-@-webkit-keyframes animatetop {
-  from {top:-300px; opacity:0} 
-  to {top:0; opacity:1}
-}
-
-@keyframes animatetop {
-  from {top:-300px; opacity:0}
-  to {top:0; opacity:1}
-}
-
-/* The Close Button */
-.close {
-  color: white;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.modal-header {
-  padding: 2px 16px;
-  background-color: #5cb85c;
-  color: white;
-}
-
-.modal-body {padding: 2px 16px;}
-
-.modal-footer {
-  padding: 2px 16px;
-  background-color: #5cb85c;
-  color: white;
-}
-</style>
-<style type="text/css">
-	body, html {
-    	cursor: url(cur116.cur), pointer;
-</style>
 <!DOCTYPE html>
 <html lang="en">
    <head>
       <!-- basic -->
+      <title>Leeds Virtual Lab</title>
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <!-- mobile -->
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="viewport" content="initial-scale=1, maximum-scale=1">
       <!-- site metas -->
-      <title>Leeds Virtual Lab</title>
       <meta name="keywords" content="">
-	<!-- CSS -->
-      <!-- bootstrap css -->
-      <link rel="stylesheet" href="bootstrap.min.css"/>
-      <!-- style css -->
-      <link rel="stylesheet" href="style.css">
-      <!-- Responsive-->
-      <link rel="stylesheet" href="responsive.css">
-      <!-- fevicon -->
-      <link rel="icon" href="favicon-16x16.png" />
-      <!-- older IEs-->
-	 <link rel="stylesheet" type="text/css" href="https://raw.githubusercontent.com/jordan-robert/leeds-design/master/font-awesome.css">
-      <link rel="stylesheet" href="jquery.fancybox.min.css" media="screen">
-
+      <!-- CSS -->
+		<link rel="stylesheet" href="src/css/slideshow.css">
+		<link rel="stylesheet" href="src/css/custom.css">
+		<!-- bootstrap css -->
+		<link rel="stylesheet" href="src/css/bootstrap.min.css"/>
+		<!-- style css -->
+		<link rel="stylesheet" href="src/css/style.css">
+		<!-- Responsive-->
+		<link rel="stylesheet" href="src/css/responsive.css">
+		<!-- fevicon -->
+		<link rel="icon" href="src/media/favicon-16x16.png" />
    </head>
-      <!-- end loader -->
-      <!-- header -->
+   
+      <!-- Navigation Bar -->
       <header>
-<header>
-  <! -- <div class="overlay"></div>
-  <! -- <<video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-    <! -- <<source src="https://raw.githubusercontent.com/jordan-robert/leeds-design/master/ciscolab.mp4" type="video/mp4">
-  <! -- <</video>
-
          <!-- header inner -->
          <div class="header">
             <div class="container">
@@ -367,10 +50,10 @@ body {font-family: Arial, Helvetica, sans-serif;}
                   </div>
                   <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
                      <nav class="navigation navbar navbar-expand-md navbar-dark ">
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                         </button>
-                        <div class="collapse navbar-collapse" id="navbarsExample04">
+                        <div class="collapse navbar-collapse" id="nav">
                            <ul class="navbar-nav mr-auto">
                               <li class="nav-item active">
                                  <a class="nav-link" href="#">Home</a>
@@ -378,21 +61,16 @@ body {font-family: Arial, Helvetica, sans-serif;}
                               <li class="nav-item">
                                  <a class="nav-link" href="#faq">FAQ</a>
 			      					</li>
-                               <li class="nav-item">
-                                 <a class="nav-link" href="https://passwordreset.microsoftonline.com/?ru=GB&hosted=0&device_platform=Windows+10&username=%40leedslab.uk"  target="_blank" >Password Reset</a>
-                             </li>	 
                               <li class="nav-item">
-                                 <a class="nav-link" href="#why>Common Issues</a>
-                       
-			      					</li>
+                                 <a class="nav-link" href="https://passwordreset.microsoftonline.com/?ru=GB&hosted=0&device_platform=Windows+10&username=%40leedslab.uk"  target="_blank" >Password Reset</a>
+									</li>	 
                               <li class="nav-item">
                                  <a class="nav-link" href="https://zeus.leedslab.uk/#/login">Login - Zeus</a>
-                              </li>
+								</li>
                               <li class="nav-item">
                                  <a class="nav-link" href="https://apollo.leedslab.uk/#/login">Login - Apollo</a>
                               </li>
-                                 <b> <s1 id="kemp-status"> </b></s1> 
-								 <h1> <b> <s2 id="kemp-fail-status"></s2> </b> </h1>
+
                               </li>
                            </ul>
                         </div>
@@ -411,137 +89,132 @@ body {font-family: Arial, Helvetica, sans-serif;}
                <div class="col-md-5">
                   <div class="text-bg">
                      <h1>Leeds<br> Virtual Lab</h1>
-
                      <span>Splash Page<span>
-	                          <p>Welcome to Leeds Virtual Lab! The site that allows you to simulate large networks using real virtualised images<br> - Lab is running EVE-NG (UNETLAB)<br>- Maintained by Jordan, this page is hosted externally (Github) so remember to bookmark it as other links can change<br> - Please select either Zeus or Apollo server to start!</p> 
-
-			</font></h2>
-		     <a href="https://zeus.leedslab.uk/#/login">Launch Zeus EVE</a>
-		     <a href="https://apollo.leedslab.uk/#/login">Launch Apollo EVE</a>
-			<table>
-			<table style="width:95%">
-			<tr>
-    			<th> <s1 id="zeus-status"> </s1> </th>
-				<th> <s2 id="zeus-fail-status"> </s1> </th>
-    			<th> <s1 id="apollo-status"> </s1></th>
-				<th> <s2 id="apollo-fail-status"> </s1></th>
-		</tr>
-		
-		</table>
-                  </div>
-               </div>
-               <div class="col-md-7">
-                 <div class="w3-content w3-display-container">
-  			<img class="mySlides" src="https://www.eve-ng.net/wp-content/uploads/2019/11/34_sd-wan_viptela.png" style="width:100%">
-  			<img class="mySlides" src="https://www.eve-ng.net/wp-content/uploads/2019/11/16_link_sus.png" style="width:100%">
-  			<img class="mySlides" src="https://www.eve-ng.net/wp-content/uploads/2019/11/29_hide_label.png" style="width:100%">
-  			<img class="mySlides" src="https://www.eve-ng.net/wp-content/uploads/2019/11/15wireshark.png" style="width:100%">
-  			<button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
-  			<button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
-      			</div>            
-		   </div>
-               </div>
+	                        <p>Welcome to Leeds Virtual Lab! The site that allows you to simulate large networks using real virtualised images<br> - Lab is running EVE-NG (UNETLAB)<br>- Maintained by Jordan, this page is hosted externally (Github) so remember to bookmark it as other links can change<br> - Please select either Zeus or Apollo server to start!</p> 
+							</font></h2>
+							<a href="https://zeus.leedslab.uk/#/login">Launch Zeus EVE</a>
+							<a href="https://apollo.leedslab.uk/#/login">Launch Apollo EVE</a>
+							<table>
+								<table style="width:95%">
+								<tr>
+								<th> <s1 id="zeus-status"> </s1> </th>
+								<th> <s2 id="zeus-fail-status"> </s1> </th>
+								<th> <s1 id="apollo-status"> </s1></th>
+								<th> <s2 id="apollo-fail-status"> </s1></th>
+							</table>
+						</div>
+					</div>
+					<!-- Slide Show -->
+					<div class="col-md-7">
+					<div class="w3-content w3-display-container">
+						<img class="mySlides" src="src/media/slide1.png" style="width:100%">
+						<img class="mySlides" src="src/media/slide2.png" style="width:100%">
+						<img class="mySlides" src="src/media/slide3.png" style="width:100%">
+						<img class="mySlides" src="src/media/slide4.png" style="width:100%">
+					<button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+					<button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+      			</div>   
+						<u> <p> Service Status </p> </u>
+				        <b> <s1 id="kemp-status"> </b></s1> 
+						<h1> <b> <s2 id="kemp-fail-status"></s2> </b> </h1>
+						<u> <p> Client </p> </p> </u>
+						<b> <s1 id="browser-status"></s1> </b> 
+						<br>
+						<button id="btn1" onclick=location.reload()>Refresh Lab Status</button><br/>
             </div>
          </div>
       </section>
       <!-- end banner -->
-                </div>
-               </div>
-            <div class="row">
-               <div class="col-md-12">
- 		<div id="why" class="why">
-     <!-- News -->
-         <div class="container">
-            <div class="row">
-               <div class="col-md-12">
-                  <div class="titlepage">
-		    <h2><font color="red">start@labbing</font><font color="grey">:~#
-			<span
-     			class="txt-rotate"
-     			data-period="2000"
-     			data-rotate='[ "Cisco SD-WAN", "Palo Alto", "Cisco IOS/IOS XE", "Nvidia", "F5", "Fortinet","Linux", "Cisco Nexus", "Cisco DNA-C", "Windows", "Cisco ASA"]'></span>
- 	             	<br> </br>
-              
-      <!-- end why -->
-  <div class="container">
-            <div id="faw" class="row">
-               <div class="col-md-12">
-                  <div class="titlepage">
-                    <h2>Overview</h2>
-			<p>The Leeds Virtual Design Lab is a clientless virtualisation platform that allows you to create and simulate large networks without any external software. You just use a web browser! The software I have used to set this up is EVE-NG. Its very similar to GNS3 but you only need a web browser to access it. "The first clientless multivendor network emulation software that empowers network and security professionals. Clientless management makes EVE the best choice for Enterprise engineers without influence of corporate security policies as it can be run in a completely isolated environment." - EVE-NG Ltd<p>
-                     	<br><p>Read below for some background information and user guides for both labs.</p>
-                  </div>
-                     <figure><img  src="https://www.eve-ng.net/wp-content/uploads/2019/11/30_sec_lab_vpn-1.png" alt="#"/></figure><table>
-		<h1> User Guides </h1>
-			<p> A guide for people who are new to Leeds Lab, from setting up your account to the first lab </p>											     
-				<a class="read_more bg" href="#top">Full User Guide</a>
-		 	<p> A guide on Linux Dockers, Windows, VPCs and Linux Distros Installed on the lab</p>
-		 		<a class="read_more bg" href="src/docs/lds-host.pdf">Lab End Devices</a>
-			<p> A list of default node passwords</p>
-		 		<a class="read_more bg" href="#nodepass">Node Passwords</a>
-		<br>
-		<h1> Helpful YouTube Videos </h1>
-			<table style="width:75%">
-			<table>
-  		   		<tr>
-    					<th><iframe width="600" height="360" src="https://www.youtube.com/embed/OwUZcp1OJFU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></th>
-    					<th><iframe width="600" height="360" src="https://www.youtube.com/embed/qFj84MdGwpE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>	</th>	  </div>
-				</tr>
-			</table>
-                  </div>
-               </div>
-            </div>
-	<br>
-	<h2 id="faq" >Frequently Asked Questions and Answers</h2>
-            <div class="row">      
-               <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-                  <div class="why-box">
-                     <h3>Stuck loading</h3>
-                     <p>Use Firefox, Chrome or Edge - IE is not supported. If it's still stuck loading clear all history cache etc then retry</a>.</p>
-                  </div>
-               </div>
-               <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-                  <div class="why-box">
-                     <h3>How to copy and paste</h3>
-                     <p>Within the CLI tab press ("Shift" + "Ctrl" + "Alt") paste text into box, close the text box then right click on the CLI. Copy and paste is now natively supported on the Pro Lab </p>
-                  </div>
-                            </div>
-               <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-                  <div class="why-box">
-                       <h3>Export config to PC</h3>
-                     <p>1. Right click on node 2. Click export 3. Open the saved config tab from the left hand navigation bar</p>
-                  </div>
-                      </div>
-            </div>
-            <div class="row">
-   		<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-                  <div class="why-box">
-                       <h3>Sign in prompt</h3>
-                     <p>Do you get asked for a usernmane and password when trying to connect to a node? If you do, sign out using the logout button on the topology page and log back in</p>
-                  </div>
-               </div>
-            	<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-                  <div id="nodepass" class="why-box">
-                       <h3>My node is asking for a password</h3>
-                     <p>Nexus - admin (no password), ACS-CLI - admin/Root123, ACS-WEB - QFX root/juniper, acsadmin/Root123 , Juniper vMX (v14) - lab/lab123, Juniper vMX v15, VRR  root (no password), ISE admin/Test123 - change console to telnet, Cisco SD-WAN - admin/admin </p>
-                  </div>
-                      </div>
-     		<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-						<div class="why-box">
-                       <h3>Juniper Nodes?</h3>
-                     <p>The NEW Juniper vMX images are based on dual nodes setup, where Routing engine (VCP) is connected to Forwarding plane (VFP) and act like single node. All the cli configurations will be done on the VCP, but porting and connections will be on VFP. You can use vMX (v14) if you require the older image, this is deployed as a single node</p></p>
-                  </div>
-               </div>
-			   </div>
- </div>
- </div>
-         </div>
+        <!-- end banner -->
+      <div class="row">
+        <div class="col-md-12">
+			<div id="why" class="why">
+			<!-- Start Labbing -->
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="titlepage">
+							<h2><font color="red">start@labbing</font><font color="grey">:~#
+								<span
+								class="txt-rotate"
+								data-period="2000"
+								data-rotate='[ "Cisco SD-WAN", "Palo Alto", "Cisco IOS/IOS XE", "Nvidia", "F5", "Fortinet","Linux", "Cisco Nexus", "Cisco DNA-C", "Windows", "Cisco ASA"]'></span>
+								<br> </br>
+							<div class="container">
+								<div id="faw" class="row">
+									<div class="col-md-12">
+										<div class="titlepage">
+										<h2>Overview</h2>
+											<p>The Leeds Virtual Design Lab is a clientless virtualisation platform that allows you to create and simulate large networks without any external software. You just use a web browser! The software I have used to set this up is EVE-NG. Its very similar to GNS3 but you only need a web browser to access it. "The first clientless multivendor network emulation software that empowers network and security professionals. Clientless management makes EVE the best choice for Enterprise engineers without influence of corporate security policies as it can be run in a completely isolated environment." - EVE-NG Ltd<p>
+											<br><p>Read below for some background information and user guides for both labs.</p>
+										</div>
+										<figure><img  src="src/media/demo.jpg" alt="EVE Lab"/></figure>
+										<h1> User Guides </h1>
+										<p> A guide for people who are new to Leeds Lab, from setting up your account to the first lab </p>											     
+											<a class="read_more bg" href="#top">Full User Guide</a>
+										<p> A guide on Linux Dockers, Windows, VPCs and Linux Distros Installed on the lab</p>
+											<a class="read_more bg" href="src/docs/lds-host.pdf">Lab End Devices</a>
+										<p> A list of default node passwords</p>
+											<a class="read_more bg" href="#nodepass">Node Passwords</a>
+										<h1> Helpful YouTube Videos </h1>
+											<div class="iframe-container">
+												<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/9dPWARirtK8?start=51" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+											</div>
+											<div class="iframe-container">
+												<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/qFj84MdGwpE?start=15" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+										</div>	
+									</div>
+								</div>
+							</div>
+							<br>
+							<h2 id="faq" >Frequently Asked Questions and Answers</h2>
+								<div class="row">      
+									<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+										<div class="why-box">
+											<h3>Stuck loading</h3>
+											<p>Use Firefox, Chrome or Edge - IE is not supported. If it's still stuck loading clear all history cache etc then retry</a>.</p>
+										</div>
+									</div>
+									<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+										<div class="why-box">
+											<h3>How to copy and paste</h3>
+											<p>Within the CLI tab press ("Shift" + "Ctrl" + "Alt") paste text into box, close the text box then right click on the CLI. Copy and paste is now natively supported on the Pro Lab </p>
+										</div>
+									</div>
+									<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+										<div class="why-box">
+											<h3>Export config to PC</h3>
+											<p>1. Right click on node 2. Click export 3. Open the saved config tab from the left hand navigation bar</p>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+										<div class="why-box">
+											<h3>Sign in prompt</h3>
+											<p>Do you get asked for a usernmane and password when trying to connect to a node? If you do, sign out using the logout button on the topology page and log back in</p>
+										</div>
+									</div>
+									<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+										<div id="nodepass" class="why-box">
+											<h3>My node is asking for a password</h3>
+											<p>Nexus - admin (no password), ACS-CLI - admin/Root123, ACS-WEB - QFX root/juniper, acsadmin/Root123 , Juniper vMX (v14) - lab/lab123, Juniper vMX v15, VRR  root (no password), ISE admin/Test123 - change console to telnet, Cisco SD-WAN - admin/admin </p>
+										</div>
+									</div>
+									<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+										<div class="why-box">
+											<h3>Juniper Nodes?</h3>
+											<p>The NEW Juniper vMX images are based on dual nodes setup, where Routing engine (VCP) is connected to Forwarding plane (VFP) and act like single node. All the cli configurations will be done on the VCP, but porting and connections will be on VFP. You can use vMX (v14) if you require the older image, this is deployed as a single node</p></p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
                </div>
             </div>
          </div>
       </div>
-      <!-- end Hosting -->
-      <!-- Services  -->
       <div id="vendor" class="Services">
          <div class="container">
             <div class="row">
@@ -554,42 +227,42 @@ body {font-family: Arial, Helvetica, sans-serif;}
             <div class="row">
                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
                   <div class="Services-box">
-                     <i><img src="https://technext.github.io/data-web/images/service1.png" alt="#" /></i>
+                     <i><img src="src/media/icons/service1.png" alt="#" /></i>
                      <h3> Cisco Images</h3>
                      <p> Cisco IOS Router, IOS Switch, ACS, ASA, ISE, CSR, Prime Infra, WAAS, WLC, XRv and Cisco Firepower</p>
                   </div>
                </div>
                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
                   <div class="Services-box">
-                     <i><img src="https://technext.github.io/data-web/images/service2.png" alt="#" /></i>
+                     <i><img src="src/media/icons/service2.png" alt="#" /></i>
                      <h3>Juniper</h3>
                      <p> vMX version 17 (router), VSRx NextGen version 19(Firewall), Jniper vQFX, Junos Space, and Juniper VCP, VFP </p>
                   </div>
                </div>
                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
                   <div class="Services-box">
-                     <i><img src="https://technext.github.io/data-web/images/service3.png" alt="#" /></i>
+                     <i><img src="src/media/icons/service3.png" alt="#" /></i>
                      <h3>SD-WAN / SDN</h3>
                      <p>Cicso Viptela, Fortinet</p>
                   </div>
                </div>
                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
                   <div class="Services-box">
-                     <i><img src="https://technext.github.io/data-web/images/service4.png" alt="#" /></i>
+                     <i><img src="src/media/icons/service4.png" alt="#" /></i>
                      <h3>Nokia, Huawei, F5 </h3>
                      <p>F5 Big IP,Nokia and Huawei</p>
                   </div>
                </div>
                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
                   <div class="Services-box">
-                     <i><img src="https://technext.github.io/data-web/images/service5.png" alt="#" /></i>
+                     <i><img src="src/media/icons/service5.png" alt="#" /></i>
                      <h3>pfSense, Riverbed</h3>
                      <p></p>
                   </div>
                </div>
                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
                   <div class="Services-box">
-                     <i><img src="https://technext.github.io/data-web/images/service6.png" alt="#" /></i>
+                     <i><img src="src/media/icons/service6.png" alt="#" /></i>
                      <h3>End Clients</h3>
                      <p> VPC, Kali Linux, Ubuntu (with iPerf), Bohi Linux,  Windows 7 (with wireshark and putty) , Windows 10 and Windows server </p>
                   </div>
@@ -605,7 +278,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                <div class="container">
                   <div class="row">
                      <div class="col-md-12">
-                        <p>Leeds Virtual Design Lab - Updated 08/07/20 (by Jordan)</a></p>
+                        <p>Leeds Virtual Design Lab - Updated 04/01/21 (by Jordan)</a></p>
                      </div>
                   </div>
                </div>
@@ -617,91 +290,24 @@ body {font-family: Arial, Helvetica, sans-serif;}
       </footer>
       <!-- end footer -->
       <!-- Javascript files-->
-<script>
-var slideIndex = 1;
-showDivs(slideIndex);
 
-function plusDivs(n) {
-  showDivs(slideIndex += n);
-}
+ <!-- ZEUS SERVER ONLINE CHECK   -->
+<script src="src/js/zeus-status.js"></script>
 
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  if (n > x.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = x.length}
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
-  }
-  x[slideIndex-1].style.display = "block";  
-}
-</script>
-      <script src="https://technext.github.io/data-web/js/jquery.min.js"></script>
-      <script src="https://technext.github.io/data-web/js/popper.min.js"></script>
-      <script src="https://technext.github.io/data-web/js/bootstrap.bundle.min.js"></script>
-      <script src="https://technext.github.io/data-web/js/jquery-3.0.0.min.js"></script>
-      <script src="https://technext.github.io/data-web/js/plugin.js"></script>
-      <!-- sidebar -->
-      <script src="https://technext.github.io/data-web/js/jquery.mCustomScrollbar.concat.min.js"></script>
-      <script src="https://technext.github.io/data-web/js/custom.js"></script>
-      <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
-<script>
-var TxtRotate = function(el, toRotate, period) {
-  this.toRotate = toRotate;
-  this.el = el;
-  this.loopNum = 0;
-  this.period = parseInt(period, 10) || 2000;
-  this.txt = '';
-  this.tick();
-  this.isDeleting = false;
-};
+ <!-- APOLLO SERVER ONLINE CHECK   -->
+<script src="src/js/apollo-status.js"></script>
 
-TxtRotate.prototype.tick = function() {
-  var i = this.loopNum % this.toRotate.length;
-  var fullTxt = this.toRotate[i];
+ <!-- LB SERVER ONLINE CHECK   -->
+<script src="src/js/kemp-status.js"></script>
 
-  if (this.isDeleting) {
-    this.txt = fullTxt.substring(0, this.txt.length - 1);
-  } else {
-    this.txt = fullTxt.substring(0, this.txt.length + 1);
-  }
+ <!-- Browser CHECK   -->
+<script src="src/js/browser-check.js"></script>
 
-  this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+ <!-- start@leedslab Terminal   -->
+<script src="src/js/terminal.js"></script>
 
-  var that = this;
-  var delta = 300 - Math.random() * 100;
+ <!-- Picture Slides  -->
+<script src="src/js/slides.js"></script>
 
-  if (this.isDeleting) { delta /= 2; }
-
-  if (!this.isDeleting && this.txt === fullTxt) {
-    delta = this.period;
-    this.isDeleting = true;
-  } else if (this.isDeleting && this.txt === '') {
-    this.isDeleting = false;
-    this.loopNum++;
-    delta = 500;
-  }
-
-  setTimeout(function() {
-    that.tick();
-  }, delta);
-};
-
-window.onload = function() {
-  var elements = document.getElementsByClassName('txt-rotate');
-  for (var i=0; i<elements.length; i++) {
-    var toRotate = elements[i].getAttribute('data-rotate');
-    var period = elements[i].getAttribute('data-period');
-    if (toRotate) {
-      new TxtRotate(elements[i], JSON.parse(toRotate), period);
-    }
-  }
-  // INJECT CSS
-  var css = document.createElement("style");
-  css.type = "text/css";
-  css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
-  document.body.appendChild(css);
-};
-</script>
-   </body>
+</body>
 </html>        
