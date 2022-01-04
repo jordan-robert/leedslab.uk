@@ -15,7 +15,7 @@ if (/(Edge\/[0-9]{2})/i.test(navigator.userAgent)) {
 } else if (/(Opera\/[0-9]{1})/i.test(navigator.userAgent)) {
     browser.agent = navigator.userAgent.match(/(Opera\/[0-9]{1})/i)[0].split("/")[0];
     browser.version = parseInt(navigator.userAgent.match(/(Opera\/[0-9]{1})/i)[0].split("/")[1]);
-    alert("The Leeds Lab has only been tested on on Chrone, Firefox and Edge");
+    document.getElementById("browser-fail").innerHTML = "<b>" + browser.agent + "</b>" + " version " + browser.version+ " is untested.";
 } else if (/(Trident\/[7]{1})/i.test(navigator.userAgent)) {
     browser.agent = "MSIE";
     browser.version = 11;
@@ -44,11 +44,12 @@ if (/(Windows\ NT\ [0-9]{1}\.[0-9]{1})/.test(navigator.userAgent)) {
 } else if (/(OS\ X\ [0-9]{2}\.[0-9]{1})/.test(navigator.userAgent)) {
     browser.os = "OS X";
     browser.osversion = navigator.userAgent.match(/(OS\ X\ [0-9]{2}\.[0-9]{1})/)[0].split(" ")[2];
-    alert("The Leeds Lab has only been tested on Windows, but should still work on OS-X");
+    document.getElementById("browser-fail").innerHTML = "<b>" + browser.agent + "</b>" + " version " + browser.version+ " is untested.";
+    
 } else if (/(Linux)/.test(navigator.userAgent)) {
     browser.os = "Linux";
     browser.osversion = false;
-    alert("OS Detection: The Leeds Lab has only been tested on Windows, but should still work on Unix based systems");
+    document.getElementById("browser-fail").innerHTML = "<b>" + browser.agent + "</b>" + " version " + browser.version+ " is untested.";
 
 
 }
