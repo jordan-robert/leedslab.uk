@@ -15,7 +15,9 @@ function imageFound() {
 }
 
 function imageNotFound() {
-     document.getElementById("zeus-fail-status").innerHTML = "Zeus Offline!"; 
+     document.getElementById("zeus-fail-status").innerHTML = "Zeus Offline!";
+     document.getElementById("zeus-fail-banner").innerHTML = "Zeus EVE Server Offline > Click for details";
+     location.href = "#popup1";
 }
 
 ServerTest(url);
