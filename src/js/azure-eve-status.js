@@ -21,7 +21,7 @@ function imageNotFound() {
      location.href = "#popup1";
 }
 
-var apollo = "https://azure-eve1.leedslab.uk/themes/adminLTE/connectivity/aeve/";
+var apollo = "https://azurelab.leedslab.uk/themes/adminLTE/connectivity/aeve/";
 var ram = Math.floor(Math.random()* 2000);
 var svg = ".svg";
 var url = apollo + ram + svg;
