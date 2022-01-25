@@ -8,4 +8,4 @@ function imageNotFound() {
      location.href = "#popup1";
 }
 
-ServerTest("https://con.leedslab.uk/lm_auth_proxy?LMimage=con-test.png");
+ServerTest("https://zcon.leedslab.uk/lm_auth_proxy?LMimage=con-test.png");
