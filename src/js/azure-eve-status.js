@@ -10,7 +10,9 @@ var time = today.getHours()
 
 if (time < 7) {
   Shutdownstate = "Morning, you're too early, Azure EVE will be online at 07:00AM!";
-} else if (time => 19) {
+    } else if (time = 19) {
+  Shutdownstate = "Azure EVE has shutdown for the night and will be back at 07:00AM, have a good evening!";
+} else if (time > 19) {
   Shutdownstate = "Azure EVE has shutdown for the night and will be back at 07:00AM, have a good evening!";
 } else {
   function imageFound() {
