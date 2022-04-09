@@ -61,7 +61,7 @@ if (browser.agent === "MSIE" && browser.version <= 12) {
     newDiv.setAttribute("style", "background-color:yellow;padding:18px;");
     document.body.insertBefore(newDiv, document.body.firstChild);
 } else { //TODO: Remove for Prod only added to show some flexibility and testing 
-    document.getElementById("browser-status").innerHTML = "<b>" + browser.agent + "</b>" + " version " + browser.version+ " is supported.";
+    document.getElementById("browser-status").innerHTML = "<b>" + browser.os + browser.agent + "</b>" + " version " + browser.version+ " is supported.";
     // var newDiv = document.createElement("div");
     // newDiv.innerHTML = "<b>" + browser.agent + "</b> is supported. Passed Leeds Lab Verification: are using version: " + browser.version+ ".";
     // newDiv.setAttribute("style", "background-color:cyan;padding:12px;");
