@@ -1,4 +1,4 @@
-document.getElementById("kemp-fail-status").innerHTML = "<s2> Testing Connectivity to Lab Servers.... </s2>"; 
+document.getElementById("kemp-fail-status").innerHTML = "Testing Connectivity to Lab Servers...."; 
 function imageFound() {
     document.getElementById("kemp-status").innerHTML = "Kemp LB Online"; 
 }
