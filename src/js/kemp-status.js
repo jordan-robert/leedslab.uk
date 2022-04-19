@@ -4,7 +4,7 @@ function imageFound() {
 }
 
 function imageNotFound() {
-     document.getElementById("kemp-fail-status").innerHTML = "KEMP Offline! (All VMs will be down, as they connect to this!)"; 
+     document.getElementById("kemp-fail-status").innerHTML = "Core LoadBalancer Offline! (All VMs will be down, as they connect to this!)"; 
      document.getElementById("kemp-fail-banner").innerHTML = "Kemp Server Offline > Click for details";
      location.href = "#popup1";
 }
