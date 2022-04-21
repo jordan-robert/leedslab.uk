@@ -8,6 +8,7 @@ var downloadTimer = setInterval(function(){
 }, 1000);
 document.getElementById("kemp-fail-status").innerHTML = "Testing Connectivity to Lab Servers...."; 
 function imageFound() {
+    document.getElementById("kemp-fail-status").style.display='none';
     document.getElementById("progressBar").style.display='none';
     document.getElementById("kemp-status").innerHTML = "Kemp LB Online"; 
 }
