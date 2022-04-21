@@ -12,6 +12,7 @@ function ServerTest(url) {
 }
 
 function imageFound() {
+    document.getElementById("zeus-fail-status").style.display='none';
     document.getElementById("zeus-status").innerHTML = "Zeus Online"; 
 }
 
