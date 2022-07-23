@@ -3,6 +3,9 @@ $.get('https://start.leedslab.uk/cdn-cgi/access/get-identity?format=json', funct
 name = (data.name)
 name.toString
 nameif = name.includes(",");
+document.getElementById("name-print").innerHTML = data.name;
+document.getElementById("email-print").innerHTML = data.email;
+document.getElementById("ip-print").innerHTML = data.ip];
 
 if (nameif === true) {
   let text = (data.name);
