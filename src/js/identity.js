@@ -1,4 +1,4 @@
-const hour = new Date().getHours(); 
+const hour = new Date().getHours();
 $.get('https://start.leedslab.uk/cdn-cgi/access/get-identity?format=json', function(data) {
   console.log(data);
 name = (data.name)
