@@ -16,7 +16,7 @@ var i = 0;
 var speed = 50;
  function typeWriter() {
   if (i < email.length) {
-    document.getElementById("demo").innerHTML += email.charAt(i);
+    document.getElementById("login").innerHTML += email.charAt(i);
     i++;
     setTimeout(typeWriter, speed);
   }
