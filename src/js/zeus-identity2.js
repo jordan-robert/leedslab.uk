@@ -10,15 +10,10 @@ if (curHr < 12) {
 }
 $.get('https://zta-zeus.leedslab.uk/cdn-cgi/access/get-identity?format=json', function(data) {
   console.log(data);
-name = (data.name)
-email = (data.email)
-name.toString
-nameif = name.includes(",");
-document.getElementById("name-print").innerHTML = name;
-document.getElementById("email-print").innerHTML = email;
-document.getElementById("ip-print").innerHTML = ip;
-
-if (nameif === true) {
+  
+ name = (data.name)
+ nameif = name.includes(",");
+ if (nameif === true) {
   let text = (data.name);
   const myArray = text.split(",");
   document.getElementById("print-first-name").innerHTML = myArray[2];
@@ -27,6 +22,13 @@ if (nameif === true) {
   const myArray = text.split(" ");
   document.getElementById("print-first-name").innerHTML = myArray[0];
 }
+
+email = (data.email)
+
+document.getElementById("name-print").innerHTML = name;
+document.getElementById("email-print").innerHTML = email;
+document.getElementById("ip-print").innerHTML = ip;
+
 
   
 });
