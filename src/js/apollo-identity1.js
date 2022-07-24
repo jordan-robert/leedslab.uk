@@ -11,9 +11,20 @@ if (curHr < 12) {
 $.get('https://zta-apollo.leedslab.uk/cdn-cgi/access/get-identity?format=json', function(data) {
   console.log(data);
   
+email = (data.email)
+var i = 0;
+var speed = 50;
+ function typeWriter() {
+  if (i < email.length) {
+    document.getElementById("demo").innerHTML += email.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+  
  name = (data.name)
  nameif = name.includes(",");
- email = (data.email)
+
  if (nameif === true) {
   let text = (data.name);
   const myArray = text.split(",");
@@ -22,7 +33,7 @@ $.get('https://zta-apollo.leedslab.uk/cdn-cgi/access/get-identity?format=json', 
   let text = (data.name);
   const myArray = text.split(" ");
   document.getElementById("print-first-name").innerHTML = myArray[0];
-  document.getElementById("login").value = email;
+  typeWriter()
 }
 
 
