@@ -13,6 +13,7 @@ $.get('https://zta-zeus.leedslab.uk/cdn-cgi/access/get-identity?format=json', fu
   
  name = (data.name)
  nameif = name.includes(",");
+ email = (data.email)
  if (nameif === true) {
   let text = (data.name);
   const myArray = text.split(",");
@@ -21,9 +22,10 @@ $.get('https://zta-zeus.leedslab.uk/cdn-cgi/access/get-identity?format=json', fu
   let text = (data.name);
   const myArray = text.split(" ");
   document.getElementById("print-first-name").innerHTML = myArray[0];
+  document.getElementById("login").innerHTML = email;
 }
 
-email = (data.email)
+
 
 document.getElementById("name-print").innerHTML = name;
 document.getElementById("email-print").innerHTML = email;
