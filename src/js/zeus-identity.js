@@ -2,11 +2,11 @@ var today = new Date()
 var curHr = today.getHours()
 
 if (curHr < 12) {
-  document.getElementById("print-greeting").innerHTML = "Morning, "
+  document.getElementById("print-greeting").innerHTML = "Morning "
 } else if (curHr < 18) {
-  document.getElementById("print-greeting").innerHTML = "Afternoon, "
+  document.getElementById("print-greeting").innerHTML = "Afternoon "
 } else {
-  document.getElementById("print-greeting").innerHTML = "Evening, "
+  document.getElementById("print-greeting").innerHTML = "Evening "
 }
 $.get('https://zta-zeus.leedslab.uk/cdn-cgi/access/get-identity?format=json', function(data) {
   console.log(data);
