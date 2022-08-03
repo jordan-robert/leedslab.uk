@@ -8,7 +8,7 @@ if (curHr < 12) {
 } else {
   document.getElementById("print-greeting").innerHTML = "Evening "
 }
-$.get('https://zta-zeus.leedslab.uk/cdn-cgi/access/get-identity?format=json', function(data) {
+$.get('https://zeus.leedslab.uk/cdn-cgi/access/get-identity?format=json', function(data) {
   console.log(data);
   
  name = (data.name)
