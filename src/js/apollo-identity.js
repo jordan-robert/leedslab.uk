@@ -8,7 +8,7 @@ if (curHr < 12) {
 } else {
   document.getElementById("print-greeting").innerHTML = "Evening "
 }
-$.get('https://zta-apollo.leedslab.uk/cdn-cgi/access/get-identity?format=json', function(data) {
+$.get('https://apollo.leedslab.uk/cdn-cgi/access/get-identity?format=json', function(data) {
   console.log(data);
   
 email = (data.email)
