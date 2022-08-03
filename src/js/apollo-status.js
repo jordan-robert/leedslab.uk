@@ -13,7 +13,7 @@ function imageNotFound() {
 	 
 }
 
-var apollo = "https://cap.leedslab.uk/themes/adminLTE/connectivity/ap/";
+var apollo = "https://apollo.leedslab.uk/themes/adminLTE/connectivity/ap/";
 var ram = Math.floor(Math.random()* 2000);
 var svg = ".svg";
 var url = apollo + ram + svg;
