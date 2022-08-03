@@ -10,13 +10,13 @@ document.getElementById("cloudflare-fail-status").innerHTML = "Testing Connectiv
 function imageFound() {
     document.getElementById("cloudflare-fail-status").style.display='none';
     document.getElementById("progressBar").style.display='none';
-    document.getElementById("cloudflare-status").innerHTML = "Kemp LB Online"; 
+    document.getElementById("cloudflare-status").innerHTML = "Cloudflare Tunnel Online"; 
 }
 
 function imageNotFound() {
      document.getElementById("progressBar").style.display='none';
-     document.getElementById("kemp-fail-status").innerHTML = "Core LoadBalancer Offline! (All VMs will be down, as they connect to this!)";
-     document.getElementById("kemp-fail-banner").innerHTML = "Kemp Server Offline > Click for details";
+     document.getElementById("kemp-fail-status").innerHTML = "Cloudflare Tunnel Offline! (All VMs will be down, as they connect to this!)";
+     document.getElementById("kemp-fail-banner").innerHTML = "Cloudflare Tunnel Offline > Click for details";
      location.href = "#popup1";
 }
 
