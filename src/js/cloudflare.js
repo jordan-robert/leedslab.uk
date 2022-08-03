@@ -15,8 +15,8 @@ function imageFound() {
 
 function imageNotFound() {
      document.getElementById("progressBar").style.display='none';
-     document.getElementById("kemp-fail-status").innerHTML = "Cloudflare Tunnel Offline! (All VMs will be down, as they connect to this!)";
-     document.getElementById("kemp-fail-banner").innerHTML = "Cloudflare Tunnel Offline > Click for details";
+     document.getElementById("cloudflare-fail-status").innerHTML = "Cloudflare Tunnel Offline! (All VMs will be down, as they connect to this!)";
+     document.getElementById("cloudflare-fail-banner").innerHTML = "Cloudflare Tunnel Offline > Click for details";
      location.href = "#popup1";
 }
 
