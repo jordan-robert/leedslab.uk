@@ -6,11 +6,11 @@ var downloadTimer = setInterval(function(){
   document.getElementById("progressBar").value = 10 - timeleft;
   timeleft -= 1;
 }, 1000);
-document.getElementById("kemp-fail-status").innerHTML = "Testing Connectivity to Lab Servers...."; 
+document.getElementById("cloudflare-fail-status").innerHTML = "Testing Connectivity to Lab Servers...."; 
 function imageFound() {
-    document.getElementById("kemp-fail-status").style.display='none';
+    document.getElementById("cloudflare-fail-status").style.display='none';
     document.getElementById("progressBar").style.display='none';
-    document.getElementById("kemp-status").innerHTML = "Kemp LB Online"; 
+    document.getElementById("cloudflare-status").innerHTML = "Kemp LB Online"; 
 }
 
 function imageNotFound() {
@@ -20,4 +20,4 @@ function imageNotFound() {
      location.href = "#popup1";
 }
 
-ServerTest("https://zcon.leedslab.uk/lm_auth_proxy?LMimage=con-test.png");
+ServerTest("https://zta-bt.leedslab.uk/images/bt_logo_u461.png");
