@@ -19,8 +19,8 @@ function imageNotFound() {
      document.getElementById("cloudflare-fail-banner").innerHTML = "Cloudflare Tunnel Offline > Click for details";
      location.href = "#popup1";
 }
-var apollo = "https://zta-cloudflare-con.leedslab.uk/ap/";
+var cloudflare = "https://zta-cloudflare-con.leedslab.uk/ap/";
 var ram = Math.floor(Math.random()* 2000);
 var svg = ".svg";
-var url = apollo + ram + svg;
+var url = cloudflare + ram + svg;
 ServerTest(url);
