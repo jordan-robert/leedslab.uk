@@ -1,5 +1,5 @@
 document.getElementById("zeus-fail-status").innerHTML = "Please Wait..."; 
-var zeus = "https://zcon.leedslab.uk/themes/adminLTE/connectivity/";
+var zeus = "https://zeus.leedslab.uk/themes/adminLTE/connectivity/";
 var ram = Math.floor(Math.random()* 2000);
 var svg = ".svg";
 var url = zeus + ram + svg;
