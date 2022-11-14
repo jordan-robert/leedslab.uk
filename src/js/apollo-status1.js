@@ -2,7 +2,7 @@ document.getElementById("apollo-fail-status").innerHTML = "Please Wait...";
 function imageFound() {
     document.getElementById("apollo-fail-status").style.display='none';
     document.getElementById("apollo-status").innerHTML = "Apollo Online";
-    document.getElementById("apollo-status-banner").innerHTML = "Apollo Online"; 
+    document.getElementById("apollo-status-banner").innerHTML = "Apollo Cluster Node Online"; 
 }
 
 function imageNotFound() {
