@@ -713,5 +713,25 @@ button {
      color: #0c0f38;
 }
 
+/* If on Mobile do this  */
+@media all and (max-width: 765px) {
+    .slides-navigation {display:none;}
+    .cover-slides {display:none;}
+    .desktop-show {display:none;}
+    .img-fluid{display:none;}
+    .m-b-40 {
+        letter-spacing: 0 !important;
+        text-align: center !important;
+        font-size: 18px !important;
+        font-weight: normal !important;
+        position: relative !important;
+        padding: 0 0 10px 0 !important;
+        font-weight: normal !important;
+        line-height: 120% !important;}
+}
+/* If on desktop do this */
+@media all and (min-width: 766px) {
+    .mobile-show {display:none;}
+}
 
 /** end footer **/
