@@ -1,0 +1,844 @@
+
+<!--      
+ | |                 | |     \ \    / (_)    | |             | | | |         | |    
+ | |     ___  ___  __| |___   \ \  / / _ _ __| |_ _   _  __ _| | | |     __ _| |__  
+ | |    / _ \/ _ \/ _` / __|   \ \/ / | | '__| __| | | |/ _` | | | |    / _` | '_ \ 
+ | |___|  __/  __/ (_| \__ \    \  /  | | |  | |_| |_| | (_| | | | |___| (_| | |_) |
+ |______\___|\___|\__,_|___/     \/   |_|_|   \__|\__,_|\__,_|_| |______\__,_|_.__/ 
+        
+		Updated by Jordan 22/07/22          
+-->
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <title>Leeds Virtual Lab</title>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- mobile -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <meta name="keywords" content="">
+      <!-- CSS -->
+		<link rel="stylesheet" href="src/css/slideshow.css">
+		<link rel="stylesheet" href="src/css/custom.css">
+		<!-- bootstrap css -->
+		<link rel="stylesheet" href="src/css/bootstrap.min.css"/>
+		<!-- style css -->
+		<link rel="stylesheet" href="src/css/style.css">
+		<!-- Responsive-->
+		<link rel="stylesheet" href="src/css/responsive.css">
+		<!-- fevicon -->
+		<link rel="icon" href="src/media/favicon-16x16.png" />
+   </head>
+</body>
+      <!-- Navigation Bar -->
+      <header>
+         <!-- header inner -->
+         <div class="header">
+            <div class="container">
+               <div class="row">
+                  <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
+                     <div class="full">
+                        <div class="center-desk">
+                           <div class="logo">
+                              </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-xl-10 col-lg-9 col-md-9 col-sm-9">
+                     <nav class="navigation navbar navbar-expand-md navbar-dark ">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="nav">
+                           <ul class="navbar-nav mr-auto">
+                                 <a class="nav-link" href="https://leedslab.cloudflareaccess.com/#/">All Services</a>
+                              </li>
+			      	</li>
+                              <li class="nav-item">
+                                 <a class="nav-link" href="https://passwordreset.microsoftonline.com/?ru=GB&hosted=0&device_platform=Windows+10&username=%40leedslab.uk"  target="_blank" >Password Reset</a>
+				</li>	 
+			      <li class="nav-item">
+                                 <a class="nav-link" href="http://status.leedslab.uk" target="_blank" >Service Status</a>
+                              	</li>
+                              <li class="nav-item">
+                                 <a class="nav-link" href="#proxmox">Proxmox</a>
+                              <li class="nav-item">
+                                 <a class="nav-link" href="#zeus">EVE-NG</a>
+				</li>
+                              <li class="nav-item">
+                                 <a class="nav-link" href="#proxmox">Kasm Dockers</a>
+                              </li>
+                           </ul>
+                        </div>
+                     </nav>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </header>
+      <!-- end header inner -->
+      <!-- end header -->
+      <!-- banner -->
+      <section class="banner_main">
+         <div class="container">
+            <div class="row d_flex">
+               <div class="col-md-5">
+                  <div class="text-bg">
+                     <h1>Leeds<br> Virtual Lab</h1>
+                     <span>Splash Page<span>
+			     <p> <t id=print-greeting></t> <t id=print-name></t> - Welcome to Leeds Virtual Lab! The service that allows you to virtualise.<br> - Contains 1 large EVE-NG cluster and 1 Proxmox server<br>- Maintained by Jordan, this page is hosted externally so remember to bookmark it as other links can change<br></p> 
+							</font></h2>
+							<a href="#zeus">Launch Leeds EVE</a>
+							<table>
+								<table style="width:95%">
+								<tr>
+								<th> <s1 id="zeus-status"> </s1> </th>
+								<th> <s2 id="zeus-fail-status"> </s1> </th>
+							</table>
+						</div>
+					</div>
+					<!-- Slide Show -->
+					<div class="col-md-7">
+					<div class="w3-content w3-display-container">
+						<img class="mySlides" src="src/media/slide1.png" style="width:100%">
+						<img class="mySlides" src="src/media/slide2.png" style="width:100%">
+						<img class="mySlides" src="src/media/slide3.png" style="width:100%">
+						<img class="mySlides" src="src/media/slide4.png" style="width:100%">
+					<button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+					<button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+      			</div>   
+						<u> <p> Service Status </p> </u>
+						<b> <s1 id="cloudflare-status"> </b></s1>
+						<h1> <b> <s2 id="cloudflare-fail-status"></s2> </b> </h1>
+						<b> <s1 id="apollo-status"> </s1> <b>
+						<h1> <s2 id="apollo-fail-status"> </s2> </h1>
+						<h1> <progress value="0" max="10" id="progressBar"></progress> </h1>
+						<u> <p> Client Details (You) </p> </p> </u>
+		       						<style> 
+						t {
+  						color: white;
+						class="nostyle"
+						</style>
+		       				<t> <b> Name:  </b> </t>
+						<t id="name-print"></t><br>
+		       				<t> <b> Single Sign On (SSO) ID:  </b> </t>
+						<t id="email-print"></t><br>
+						<t> <b> IP:  </b> </t>
+						<t id="ip-print"></t><br>
+						<b> <s1 id="browser-status"></s1> </b>
+		       				<h1> <s2 id="browser-fail"></s2> </h1>
+						<button id="btn1" onclick=location.reload()>Refresh Lab Status</button></button>
+		       				<br>
+						<style> 
+						a {
+  						color: white;
+						</style>
+		       				<u> <a href="http://status.leedslab.uk">Service Status Page</a></u>
+            </div>
+         </div>
+      </section>
+      <!-- end banner -->
+        <!-- end banner -->
+      <div class="row">
+        <div class="col-md-12">
+			<div id="why" class="why">
+			<!-- Start Labbing -->
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="titlepage">
+							<div class="container">
+								<div id="faw" class="row">
+									<div class="col-md-12">
+										<div class="titlepage">
+										<h2>List of EVE-NG Nodes and Default Passwords</h2>
+								<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myTable {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  font-size: 18px;
+}
+
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 12px;
+}
+
+#myTable tr {
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  background-color: #f1f1f1;
+}
+</style>
+</head>
+<body>
+
+<h1> Leeds Technical Design - EVE-NG Service </h1>
+<h2>EVE-NG Nodes Installed</h2>
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for nodes.." title="Type in a node name">
+
+<table id="myTable">
+  <tr class="header">
+    <th style="width:30%;">Node</th>
+    <th style="width:30%;">Login Details</th>
+    <th style="width:30%;">Notes</th>
+  </tr>
+  <tr>
+    <td>Android Tablet</td>
+    <td>N/A</td>
+    <td>Android 9</td>
+  </tr>
+  <tr>
+    <td>Arista vEOS</td>
+    <td>Username: admin (no password)</td>
+    <td>Version 4.2.1.1.1F</td>
+  </tr>
+  <tr>
+    <td>Aruba OS-CX Virtual Switch</td>
+    <td>Username: admin (no password)</td>
+    <td>Version 10.07</td>
+  </tr>
+  <tr>
+    <td>Aruba WiFi Controller</td>
+    <td>Username: admin (no password)</td>
+    <td>Version 8.8.0.1</td>
+  </tr>
+  <tr>
+    <td>CheckPoint Security Gateway VE</td>
+    <td>Username: admin<br> Password: Test123</td>
+    <td>Version R80-10</td>
+  </tr>
+  <tr>
+    <td>Cisco ACS Firewall</td>
+    <td>Cli:admin Root123 <br> Web:ACSAdmin Root123</td>
+    <td>Version 5.8.1.4</td>
+  </tr>
+  <tr>
+    <td>Cisco ASA</td>
+    <td>No password</td>
+    <td>Version 9.16.2,9.15.9.14.9.12</td>
+  </tr>
+  <tr>
+    <td>Cisco C8000v Switch</td>
+    <td>No password</td>
+    <td>Version 17.06<br> Boot time 5 minutes</td>
+  </tr>
+  <tr>
+    <td>Cisco Firepower 6</td>
+    <td>admin / Admin123</td>
+    <td>Version 6.3 <br> Select FMC, FTD or NGIPS from Image selection <br> Boot time 5+ minutes</td>
+  </tr>
+  <tr>
+    <td>Cisco 1710 Router</td>
+    <td>No password</td>
+    <td>IOS 12.4</td>
+  </tr>
+  <tr>
+    <td>Cisco 3725 Router</td>
+    <td>No password</td>
+    <td>IOS 12.4 <br> Supports Switch Module </td>
+  </tr>
+  <tr>
+    <td>Cisco 7206 Router</td>
+    <td>No password</td>
+    <td>IOS 12.4 <br> 6 Slots for virtual line cards </td>
+  </tr>
+  <tr>
+    <td>Cisco IPS</td>
+    <td>cisco <br>
+ciscoips123</td>
+    <td>Version 7.1</td>
+  </tr>
+  <tr>
+    <td>Cisco ISE</td>
+    <td>admin/Test123</td>
+    <td>Version 3.0.458 <br> change console to telnet,</td>
+  </tr>
+  <tr>
+    <td>Cisco Nexus (NX-OSv)</td>
+    <td>Username: admin (no password)</td>
+    <td>Version: Titanium 7.3.0</td>
+  </tr>
+   <tr>
+    <td>Cisco Nexus (NX-OSv 9K)</td>
+    <td>Username: admin (no password)</td>
+    <td>Boot time 10 minutes <br> Select 9500v or 9300v in images tab <br> Versions 9.x.x (Various)</td>
+  </tr>
+   <tr>
+    <td>Cisco Prime Infra</td>
+    <td>TBC</td>
+    <td>Warning very large node, 10 minute boot up! <br> Version 3.9</td>
+  </tr>
+   <tr>
+    <td>Cisco UCS-PE</td>
+    <td>TBC</td>
+    <td>Version 4.1.2</td>
+  </tr>
+   <tr>
+    <td>Cisco vIOS Router (CML)</td>
+    <td>No Password</td>
+    <td>Version: 15.9.3, 15.7, 15.6, 15.4</td>
+  </tr>
+   <tr>
+    <td>Cisco Virtual ASR (CSR1000v)</td>
+    <td>No Password</td>
+    <td>Version: Various 17.x, 16.x some with SD-WAN images</td>
+  </tr>
+   <tr>
+    <td>Cisco Virtual Router (IOL)</td>
+    <td>No Password</td>
+    <td>Version: 15.7, 15.2 ,15.0 <br> Very fast, better than vIOS</td>
+  </tr>
+   <tr>
+    <td>Cisco Virtual Switch (IOL)</td>
+    <td>No Password</td>
+    <td>Version: 15.7, 15.2 ,15.0 <br> Very fast, better than vIOS</td>
+  </tr>
+   <tr>
+    <td>Cisco vWAAS</td>
+    <td>Username: admin <br> Password: default</td>
+    <td>Version 200.6.2</td>
+  </tr>
+   <tr>
+    <td>Cisco vWLC</td>
+    <td>Vendor default</td>
+    <td>Version 8.7.102</td>
+  </tr>
+   <tr>
+    <td>Cisco XRv (IOS XR Node)</td>
+    <td>Vendor default</td>
+    <td>Version 6.3.1 <br> Large node, 5 minute boot up</td>
+  </tr>
+   <tr>
+    <td>Cisco XRv 9000 (IOS XR Node)</td>
+    <td>Vendor default</td>
+    <td>Version 7.4.1 <br> Large node, 5 minute boot up</td>
+  </tr>
+   <tr>
+    <td>Cisco XRv 9000 (IOS XR Node)</td>
+    <td>Vendor default</td>
+    <td>Version 7.4.1 <br> Large node, 5 minute boot</td>
+  </tr>
+   <tr>
+    <td>Citrix Netscaler</td>
+    <td>TBC (Try vendor default)</td>
+    <td>Version 13.1 </td>
+  </tr>
+   <tr>
+    <td>Docker - Kali Linux</td>
+    <td>No Password</td>
+    <td>Very fast, latest build </td>
+  </tr>
+   <tr>
+    <td>Docker - Firefox</td>
+    <td>No Password</td>
+    <td>Very fast, latest build </td>
+  </tr>
+   <tr>
+    <td>Docker - Wireshark</td>
+    <td>No Password</td>
+    <td>Very fast, latest build </td>
+  </tr>
+   <tr>
+    <td>Docker - EVE Gui Server</td>
+    <td>No Password</td>
+    <td>Ubuntu docker with range of tools installed.</td>
+  </tr>
+   <tr>
+    <td>Docker - Ostinato</td>
+    <td>No Password</td>
+    <td>Packet Generator </td>
+  </tr>
+   <tr>
+    <td>Docker - Kali Linux Large Node</td>
+    <td>No Password</td>
+    <td>Inlcudes all tools </td>
+  </tr>
+   <tr>
+    <td>F5 Big IP Load Balancer</td>
+    <td>BIG-IP Configuration utility 	admin	admin <br>
+BIG-IP command line	root	default</td>
+    <td>Version 11.x </td>
+  </tr>
+   <tr>
+    <td>Fortinet Fortianalyzer (FAZ)</td>
+    <td>Username: admin no password</td>
+    <td>Version 7.0.2 </td>
+  </tr>
+   <tr>
+    <td>Fortinet Fortigate (FGT)</td>
+    <td>Username: admin no password</td>
+    <td>Version 7.0.3 </td>
+  </tr>
+   <tr>
+    <td>Fortinet Fortimanager (FGT)</td>
+    <td>Username: admin no password</td>
+    <td>Version 7.0.2 </td>
+  </tr>
+   <tr>
+    <td>HP VSR1000</td>
+    <td>TBC (Try vendor default)</td>
+    <td>Version 710 </td>
+  </tr>
+   <tr>
+    <td>Huawei USG6000v</td>
+    <td>Username: admin<br>Password: Admin@123</td>
+    <td>Version 5.1.6 </td>
+  </tr>
+   <tr>
+    <td>Juniper Route Reflector (RR)</td>
+    <td>Username: root no password</td>
+    <td>Version 20.4R1.12 </td>
+  </tr>
+   <tr>
+    <td>Juniper vMX Router (Single Node)</td>
+    <td>Username: lab Password lab123</td>
+    <td>Version 14.x</td>
+  </tr>
+   <tr>
+    <td>Juniper vMX VPC (Dual Node)</td>
+    <td>Username: root no password</td>
+    <td>The NEW Juniper vMX images are based on dual nodes setup, where Routing engine (VCP) is connected to Forwarding plane (VFP) and act like single node. all cli configurations will be done on the VCP, but porting and connections will be on VFP.</td>
+  </tr>
+   <tr>
+    <td>Juniper vMX VFP (Dual Node)</td>
+    <td>You don't login to this</td>
+    <td>The NEW Juniper vMX images are based on dual nodes setup, where Routing engine (VCP) is connected to Forwarding plane (VFP) and act like single node. all cli configurations will be done on the VCP, but porting and connections will be on VFP.</td>
+  </tr>
+   <tr>
+    <td>Juniper vQFX PFE (Dual Node)</td>
+    <td>Username: root no password</td>
+    <td>Version 17.4</td>
+  </tr>
+   <tr>
+    <td>Juniper vQFX RE (Dual Node)</td>
+    <td>Username: root no password</td>
+    <td>Version 17.4</td>
+  </tr>
+   <tr>
+    <td>Juniper vSRX NextGen</td>
+    <td>Username: root no password</td>
+    <td>Version 22.4R <br> Boot time 10 minutes</td>
+  </tr>
+   <tr>
+    <td>Linux - Centos 9 (Clean) </td>
+    <td>N/A Clean Image</td>
+    <td>Requires Install</td>
+  </tr>
+   <tr>
+    <td>Linux - Centos 9 (Pre-installed) </td>
+    <td>Username user Password: Test123</td>
+    <td>No install required</td>
+  </tr>
+   <tr>
+    <td>Linux - Debian 10 (Pre-installed) </td>
+    <td>Username user Password: Test123</td>
+    <td>No install required</td>
+  </tr>
+   <tr>
+    <td>Linux - Mint 20.30 (Clean) </td>
+    <td>N/A Clean Image</td>
+    <td>Requires Install</td>
+  </tr>
+   <tr>
+    <td>Linux - Radius Server </td>
+    <td>See guide here https://eve.leedslab.uk/radius.pdf </td>
+    <td>Requires Install</td>
+  </tr>
+   <tr>
+    <td>Linux - Slax (Pre-installed) </td>
+    <td>Username user Password: Test123</td>
+    <td>No install required</td>
+  </tr>
+   <tr>
+    <td>Linux - TinyCore 6.4 (Pre-installed) </td>
+    <td>Username user Password: Test123</td>
+    <td>No install required</td>
+  </tr>
+   <tr>
+    <td>Linux - Ubuntu Desktop 22.04 (Clean) </td>
+    <td>N/A Clean Image</td>
+    <td>No install required</td>
+  </tr>
+   <tr>
+    <td>Linux - Ubuntu Desktop 22.04 (Pre-installed) </td>
+    <td>Username user Password: Test123</td>
+    <td>No install required</td>
+  </tr>
+   <tr>
+    <td>Linux Ubuntu Mate 20.0.4 (Pre-installed)</td>
+    <td>Username user Password: Test123</td>
+    <td>No install required</td>
+  </tr>
+   <tr>
+    <td>Linux Ubuntu Server 22.04 (Pre-installed)</td>
+    <td>Username user Password: Test123</td>
+    <td>No install required</td>
+  </tr>
+   <tr>
+    <td>Linux Ubuntu Server 22.04 (Clean)</td>
+    <td>N/A Clean Image</td>
+    <td>No install required</td>
+  </tr>
+   <tr>
+    <td>MikroTik RouterOS</td>
+    <td>admin (no password)</td>
+    <td>No install required</td>
+  </tr>
+   <tr>
+    <td>Palo Alto Firewall</td>
+    <td>Username admin Password admin</td>
+    <td>Version 10.1.3</td>
+  </tr>
+   <tr>
+    <td>Cisco SD-WAN (Viptela Images)</td>
+    <td>Username admin Password admin</td>
+    <td>vBond, vEdge, vSmart, vManage <br> Version 20.0.8.1</td>
+  </tr>
+   <tr>
+    <td>Virtual PC (VPCS)</td>
+    <td>No password</td>
+    <td>See guide on how to use https://start.leedslab.uk/src/docs/lds-host.pdf</td>
+  </tr>
+   <tr>
+    <td>Vmware ESXi</td>
+    <td>root<br>VMware1!
+</td>
+    <td>Version 7.x</td>
+  </tr>
+   <tr>
+    <td>Windows 10</td>
+    <td>No password</td>
+    <td>Range of images, pre-setup, clean install.</td>
+  </tr>
+   <tr>
+    <td>vyOS</td>
+    <td>No password</td>
+    <td>1.4</td>
+  </tr>
+   <tr>
+    <td>Windows Server</td>
+    <td>Clean Install required, no passwords</td>
+    <td>Winserver 2022 does not require install</td>
+  </tr>
+</table>
+
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+							<h2 id="faq" >Frequently Asked Questions and Answers</h2>
+								<div class="row">      
+									<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+										<div class="why-box">
+											<h3>Stuck loading</h3>
+											<p>Use Firefox, Chrome or Edge - IE is not supported. If it's still stuck loading clear all history cache etc then retry</a>.</p>
+										</div>
+									</div>
+									<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+										<div class="why-box">
+											<h3>How to copy and paste</h3>
+											<p>Within the CLI tab press ("Shift" + "Ctrl" + "Alt") paste text into box, close the text box then right click on the CLI. Copy and paste is now natively supported on the Pro Lab </p>
+										</div>
+									</div>
+									<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+										<div class="why-box">
+											<h3>Export config to PC</h3>
+											<p>1. Right click on node 2. Click export 3. Open the saved config tab from the left hand navigation bar</p>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+										<div class="why-box">
+											<h3>Sign in prompt</h3>
+											<p>Do you get asked for a usernmane and password when trying to connect to a node? If you do, sign out using the logout button on the topology page and log back in</p>
+										</div>
+									</div>
+									<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+										<div id="nodepass" class="why-box">
+											<h3>My node is asking for a password</h3>
+											<p>Nexus - admin (no password), ACS-CLI - admin/Root123, ACS-WEB - QFX root/juniper, acsadmin/Root123 , Juniper vMX (v14) - lab/lab123, Juniper vMX v15, VRR  root (no password), ISE admin/Test123 - change console to telnet, Cisco SD-WAN - admin/admin </p>
+										</div>
+									</div>
+									<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+										<div class="why-box">
+											<h3>Juniper Nodes?</h3>
+											<p>The NEW Juniper vMX images are based on dual nodes setup, where Routing engine (VCP) is connected to Forwarding plane (VFP) and act like single node. All the cli configurations will be done on the VCP, but porting and connections will be on VFP. You can use vMX (v14) if you require the older image, this is deployed as a single node</p></p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div id="vendor" class="Services">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="titlepage">
+                     <h2>Nodes Available</h2>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                  <div class="Services-box">
+                     <i><img src="src/media/icons/service1.png" alt="#" /></i>
+                     <h3> Cisco Images</h3>
+                     <p> Cisco IOS Router, IOS Switch, ACS, ASA, ISE, CSR, Prime Infra, WAAS, WLC, XRv and Cisco Firepower</p>
+                  </div>
+               </div>
+               <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                  <div class="Services-box">
+                     <i><img src="src/media/icons/service2.png" alt="#" /></i>
+                     <h3>Juniper</h3>
+                     <p> vMX version 17 (router), VSRx NextGen version 19(Firewall), Jniper vQFX, Junos Space, and Juniper VCP, VFP </p>
+                  </div>
+               </div>
+               <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                  <div class="Services-box">
+                     <i><img src="src/media/icons/service3.png" alt="#" /></i>
+                     <h3>SD-WAN / SDN</h3>
+                     <p>Cicso Viptela, Fortinet</p>
+                  </div>
+               </div>
+               <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                  <div class="Services-box">
+                     <i><img src="src/media/icons/service4.png" alt="#" /></i>
+                     <h3>Nokia, Huawei, F5 </h3>
+                     <p>F5 Big IP,Nokia and Huawei</p>
+                  </div>
+               </div>
+               <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                  <div class="Services-box">
+                     <i><img src="src/media/icons/service5.png" alt="#" /></i>
+                     <h3>pfSense, Riverbed</h3>
+                     <p></p>
+                  </div>
+               </div>
+               <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                  <div class="Services-box">
+                     <i><img src="src/media/icons/service6.png" alt="#" /></i>
+                     <h3>End Clients</h3>
+                     <p> VPC, Kali Linux, Ubuntu (with iPerf), Bohi Linux,  Windows 7 (with wireshark and putty) , Windows 10 and Windows server </p>
+                  </div>
+               </div>
+               <a class="read_more" href="https://www.eve-ng.net/index.php/documentation/supported-images/" target="_blank">Full list of supported nodes</a>
+		<a class="read_more" href="Nodes.txt" target="_blank">Full list of installed nodes & Passwords</a>
+            </div>
+         </div>
+      </div>
+      <!-- end Servicess -->
+      <!-- why -->
+                <div class="copyright">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-md-12">
+                        <p>Leeds Virtual Design Lab - Updated 04/01/21 (by Jordan)</a></p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+    </div>
+</div>
+
+      </footer>
+      <!-- end footer -->
+      <!-- Server Down Pop UP! -->
+
+<div id="popup1" class="overlay">
+  <div class="popup"> <a class="close" href="#">&times;</a>
+    <div id="dialog" class="window">
+      
+      <div class="box">
+        <div class="newletter-title">
+          <h2>Warning - Some Servers are Down!</h2>
+        </div>
+        <div class="box-content newleter-content">
+          <label>Sorry, some of the core lab servers are down right now. Please click the service page for the details. They should be back up soon! What's Down:<br>
+		<a style="color: red" href="https://stats.uptimerobot.com/3vGDouXWWZ/790255135" <s2 id="zeus-fail-banner"></s2></a><br>
+		<a style="color: red" href="https://stats.uptimerobot.com/3vGDouXWWZ/790255143" <s2 id="apollo-fail-banner"> </s2></a><br>
+		<a style="color: red" href="https://stats.uptimerobot.com/3vGDouXWWZ/790255157" <s2 id="cloudflare-fail-banner"> </s2></a><br>
+	</label>
+          <div id="frm_subscribe">
+            <form name="subscribe" id="subscribe_popup">
+              <div>
+                <div id="notification"></div>
+                <a class="button" href="http://status.leedslab.uk/" target="_blank"<span>Summary Service Page</span></a> </div>
+            </form>
+
+            </div>
+          </div>
+          <!-- /#frm_subscribe -->
+        </div>
+        <!-- /.box-content -->
+      </div>
+    </div>
+  </div>
+</div>
+ <!-- end PopUp -->
+ <!-- Zeus Sign in -->
+<div id="zeus" class="overlay">
+  <div class="popup"> <a class="close" href="https://start.leedslab.uk/#">×</a>
+    <div id="dialog" class="window">
+      
+      <div class="box">
+        <div class="newletter-title">
+          <h2>Leeds EVE Cluster</h2>
+        </div>
+        <div class="box-content newleter-content">
+          <label>The new EVE cluster is up and working! Any issues let me know. Just a reminder, please don't store any customer or work information. You will be taken the EVE-NG login page where you will need login with your LeedsLab Account.
+	</label>
+          <div id="frm_subscribe">
+            <form name="subscribe" id="subscribe_popup">
+              <div>
+                <div id="notification"></div> <br>
+                <a class="button" href="https://eve.leedslab.uk/" style="background-color: #4CAF50" <span="">Launch EVE</a> </div>
+		  		<br>
+		<a class="button" href="https://zta-zeus-ssh.leedslab.uk/" <span="">Web SSH Console</a> </div>
+            </form>
+
+            </div>
+          </div>
+          <!-- /#frm_subscribe -->
+        </div>
+        <!-- /.box-content -->
+      </div>
+    </div>
+  </div>
+ <!-- end PopUp -->
+ <!-- Apollo Sign in -->
+<div id="apollo" class="overlay">
+  <div class="popup"> <a class="close" href="https://start.leedslab.uk/#">×</a>
+    <div id="dialog" class="window">
+      
+      <div class="box">
+        <div class="newletter-title">
+          <h2>Apollo Server Login</h2>
+        </div>
+        <div class="box-content newleter-content">
+          <label>The traffic is now routed via Cloudflare Zero Trust access. This should offer a seamless login experience, security and better performance. 
+		  Just a reminder, please don't store any customer or work information. You will be taken the EVE-NG login page where you will need login with your LeedsLab Account. 
+	</label>
+          <div id="frm_subscribe">
+            <form name="subscribe" id="subscribe_popup">
+              <div>
+                <div id="notification"></div> <br>
+                <a class="button" href="https://apollo.leedslab.uk/" style="background-color: #4CAF50" <span="">Launch Apollo</a> </div>
+		<br>
+		<a class="button" href="https://zta-apollo-ssh.leedslab.uk/" <span="">Web SSH Console</a> </div>
+            </form>
+
+            </div>
+          </div>
+          <!-- /#frm_subscribe -->
+        </div>
+        <!-- /.box-content -->
+      </div>
+    </div>
+  </div>
+ <!-- end PopUp -->
+ <!-- Proxmox Sign in -->
+<div id="proxmox" class="overlay">
+  <div class="popup"> <a class="close" href="https://start.leedslab.uk/#">×</a>
+    <div id="dialog" class="window">
+      
+      <div class="box">
+        <div class="newletter-title">
+          <h2>Coming soon</h2>
+        </div>
+        <div class="box-content newleter-content">
+          <label>Watch this space.....
+	</label>
+          <div id="frm_subscribe">
+            <form name="subscribe" id="subscribe_popup">
+              <div>
+                <div id="notification"></div> <br>
+                <a class="button" href="#" style="background-color: #4CAF50" <span="">Coming soon</a> </div>
+		<br>
+		<a class="button" href="#" <span="">Coming soon</a> </div>
+            </form>
+
+            </div>
+          </div>
+          <!-- /#frm_subscribe -->
+        </div>
+        <!-- /.box-content -->
+      </div>
+    </div>
+  </div>
+ <!-- end PopUp -->
+      <!-- Javascript files-->
+ <!-- ZEUS SERVER ONLINE CHECK   -->
+
+ <!-- <script src="src/js/zeus-status1.js"></script> -->
+
+ <!-- Cloudflare SERVER ONLINE CHECK  -->
+ <!-- <script src="src/js/cloudflare-status1.js"></script> -->
+
+ <!-- APOLLO SERVER ONLINE CHECK   -->
+ <!-- <script src="src/js/apollo-status1.js"></script> -->
+
+ <!-- Browser CHECK   -->
+<script src="src/js/browser-check.js"></script>
+
+ <!-- start@leedslab Terminal   -->
+<script src="src/js/terminal.js"></script>
+
+ <!-- Picture Slides  -->
+<script src="src/js/slides.js"></script>
+
+ <!-- jquery  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+ <!-- Identity  -->
+<script src="src/js/identity.js"></script>
+
+</body>
+</html>        
